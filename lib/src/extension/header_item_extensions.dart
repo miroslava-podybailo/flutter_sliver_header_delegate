@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sliver_flutter/sliver_flutter.dart';
+import 'package:sliver_header_delegate/sliver_header_delegate.dart';
 
 extension XHeaderItem on FlexibleHeaderItem {
   EdgeInsets paddingValue(double progress) => EdgeInsets.lerp(

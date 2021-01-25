@@ -1,6 +1,6 @@
 import 'package:example/widget/list_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:sliver_flutter/sliver_flutter.dart';
+import 'package:sliver_header_delegate/sliver_header_delegate.dart';
 
 const _headerColor = Color(0xFFB0BEC5);
 const _expandedPadding = EdgeInsets.symmetric(horizontal: 24, vertical: 20);

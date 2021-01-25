@@ -93,7 +93,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  sliver_flutter:
+  sliver_header_delegate:
     dependency: "direct main"
     description:
       path: ".."

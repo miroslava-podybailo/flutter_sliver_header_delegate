@@ -4,9 +4,9 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sliver_flutter/src/extension/widget_extension.dart';
-import 'package:sliver_flutter/src/item/header_background.dart';
-import 'package:sliver_flutter/src/widget/leading_button.dart';
+import 'package:sliver_header_delegate/src/extension/widget_extension.dart';
+import 'package:sliver_header_delegate/src/item/header_background.dart';
+import 'package:sliver_header_delegate/src/widget/leading_button.dart';
 
 // TODO FlexibleBuilder
 typedef FlexibleBuilder = Widget Function(
@@ -195,15 +195,4 @@ class FlexibleTextItem extends FlexibleHeaderItem {
 
   final TextStyle collapsedStyle;
   final TextStyle expandedStyle;
-}
-
-// TODO TransformableHeaderItem
-class TransformableHeaderItem extends FlexibleHeaderItem {
-  TransformableHeaderItem({
-    @required this.key,
-    @required this.child,
-  });
-
-  final Widget child;
-  final Key key;
 }

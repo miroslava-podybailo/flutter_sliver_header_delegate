@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sliver_flutter/sliver_flutter.dart';
-import 'package:sliver_flutter/src/extension/header_item_extensions.dart';
+import 'package:sliver_header_delegate/sliver_header_delegate.dart';
+import 'package:sliver_header_delegate/src/extension/header_item_extensions.dart';
 
 class FlexibleTextItemWidget extends StatelessWidget {
   const FlexibleTextItemWidget(
