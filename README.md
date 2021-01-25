@@ -8,7 +8,7 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ```yaml
 dependencies:
     ...
-    flutter_advanced_switch: <latest_version>
+    sliver_header_delegate: ^0.0.1
 ```
 
 Import in your project:
