@@ -1,8 +1,8 @@
 name: sliver_flutter
 description: A new Flutter package.
 version: 0.0.1
-author:
-homepage:
+author: Miroslava Podybailo
+homepage: https://github.com/miroslava-podybailo/flutter_sliver_header_delegate
 
 environment:
   sdk: ">=2.8.0 <3.0.0"

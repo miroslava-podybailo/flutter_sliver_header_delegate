@@ -1,8 +1,9 @@
 import 'package:example/screen/customized_children_example.dart';
 import 'package:example/screen/gradient_background_example.dart';
+import 'package:example/screen/image_text_background_example.dart';
 import 'package:example/screen/modified_title_example.dart';
 import 'package:example/screen/mutable_background_example.dart';
-import 'package:example/transform_child_example.dart';
+import 'package:example/screen/transform_child_example.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
             const _Button(
               text: 'Mutable background',
               route: MutableBackgroundExample(),
+            ),
+            const _Button(
+              text: 'Image & Text background',
+              route: ImageTextBackgroundExample(),
             ),
             const _Button(
               text: 'Gradient background',
