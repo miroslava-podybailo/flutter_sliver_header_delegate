@@ -38,9 +38,9 @@ delegate: FlexibleHeaderDelegate(
 ```
 
 
-## Examples
+# Examples
 
-# Mutable background
+## Mutable background
 
 ![](mutable_background.gif)
 
@@ -59,7 +59,7 @@ delegate: FlexibleHeaderDelegate(
 ```
 
 
-# Gradient background
+## Gradient background
 
 ![](gradient_background.gif)
 
@@ -83,7 +83,7 @@ delegate: FlexibleHeaderDelegate(
 ```
 
 
-# Modified title
+## Modified title
 
 ![](modified_title.gif)
 
@@ -108,7 +108,7 @@ delegate: FlexibleHeaderDelegate(
 ```
 
 
-# Customized items
+## Customized items
 
 ![](customized_items.gif)
 
