@@ -33,9 +33,9 @@ class HeaderItemWidget extends StatelessWidget {
   }
 
   Widget _wrapWithScale() {
-    return _item.options.contains(HeaderItemOptions.hide)
+    return _item.options.contains(HeaderItemOptions.scale)
         ? Transform.scale(
-            scale: Tween<double>(begin: 1, end: 0.5).transform(_progress),
+            scale: Tween<double>(begin: 1, end: 0).transform(_progress),
             child: _item.child,
           )
         : _item.child;
