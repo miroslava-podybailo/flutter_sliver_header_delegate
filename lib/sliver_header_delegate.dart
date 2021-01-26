@@ -2,7 +2,6 @@ library sliver_flutter;
 
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sliver_header_delegate/src/extension/widget_extension.dart';
 import 'package:sliver_header_delegate/src/item/header_background.dart';
