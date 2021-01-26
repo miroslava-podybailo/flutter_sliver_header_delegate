@@ -100,7 +100,7 @@ class CompleteExample extends StatelessWidget {
                   subtitle: Text('Personal'),
                   leading: Icon(Icons.contact_mail),
                   trailing: IconButton(
-                    icon: Icon(Icons.message),
+                    icon: Icon(Icons.mail),
                     onPressed: () {},
                   ),
                 ),
@@ -109,7 +109,7 @@ class CompleteExample extends StatelessWidget {
                   subtitle: Text('Work'),
                   leading: SizedBox(),
                   trailing: IconButton(
-                    icon: Icon(Icons.message),
+                    icon: Icon(Icons.mail),
                     onPressed: () {},
                   ),
                 ),
