@@ -1,4 +1,3 @@
-import 'package:example/widget/list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:sliver_header_delegate/sliver_header_delegate.dart';
 
@@ -65,8 +64,101 @@ class CompleteExample extends StatelessWidget {
               },
             ),
           ),
-          const ListWidget(
-            color: primaryColor,
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                ListTile(
+                  title: Text('(650) 555-1234'),
+                  subtitle: Text('Mobile'),
+                  leading: Icon(Icons.phone),
+                  trailing: IconButton(
+                    icon: Icon(Icons.message),
+                    onPressed: () {},
+                  ),
+                ),
+                ListTile(
+                  title: Text('(323) 555-6789'),
+                  subtitle: Text('Work'),
+                  leading: SizedBox(),
+                  trailing: IconButton(
+                    icon: Icon(Icons.message),
+                    onPressed: () {},
+                  ),
+                ),
+                ListTile(
+                  title: Text('(650) 555-6789'),
+                  subtitle: Text('Home'),
+                  leading: SizedBox(),
+                  trailing: IconButton(
+                    icon: Icon(Icons.message),
+                    onPressed: () {},
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('ali_connors@example.com'),
+                  subtitle: Text('Personal'),
+                  leading: Icon(Icons.contact_mail),
+                  trailing: IconButton(
+                    icon: Icon(Icons.message),
+                    onPressed: () {},
+                  ),
+                ),
+                ListTile(
+                  title: Text('aliconnors@example.com'),
+                  subtitle: Text('Work'),
+                  leading: SizedBox(),
+                  trailing: IconButton(
+                    icon: Icon(Icons.message),
+                    onPressed: () {},
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('2000 Main Street\nSan Francisco, CA'),
+                  subtitle: Text('Home'),
+                  leading: Icon(Icons.location_on),
+                  trailing: IconButton(
+                    icon: Icon(Icons.map),
+                    onPressed: () {},
+                  ),
+                ),
+                ListTile(
+                  title: Text('1600 Amphitheater Parkway\nMountain View, CA'),
+                  subtitle: Text('Work'),
+                  leading: SizedBox(),
+                  trailing: IconButton(
+                    icon: Icon(Icons.map),
+                    onPressed: () {},
+                  ),
+                ),
+                ListTile(
+                  title: Text('126 Severyns Ave\nMountain View, CA'),
+                  subtitle: Text('Jet Travel'),
+                  leading: SizedBox(),
+                  trailing: IconButton(
+                    icon: Icon(Icons.map),
+                    onPressed: () {},
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('Birthday'),
+                  subtitle: Text('January 9th, 1980'),
+                  leading: Icon(Icons.calendar_today),
+                ),
+                ListTile(
+                  title: Text('Wedding anniversary'),
+                  subtitle: Text('June 24th, 2015'),
+                  leading: SizedBox(),
+                ),
+                ListTile(
+                  title: Text('First day in office'),
+                  subtitle: Text('January 20th, 2015'),
+                  leading: SizedBox(),
+                ),
+              ],
+            ),
           ),
         ],
       ),
