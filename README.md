@@ -1,5 +1,5 @@
 # sliver_header_delegate
-This package provides a FlexibleHeaderDelegate.
+This package provides a flexible sliver header delegate that allows easily customize your SliverHeader
 
 ## Getting Started
 
