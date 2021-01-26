@@ -1,3 +1,4 @@
+import 'package:example/screen/complete_example.dart';
 import 'package:example/screen/customized_children_example.dart';
 import 'package:example/screen/gradient_background_example.dart';
 import 'package:example/screen/image_text_background_example.dart';
@@ -19,6 +20,10 @@ class MyApp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const _Button(
+              text: 'Complete Example',
+              route: CompleteExample(),
+            ),
             const _Button(
               text: 'Mutable background',
               route: MutableBackgroundExample(),
