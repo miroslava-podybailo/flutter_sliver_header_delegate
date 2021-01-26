@@ -36,8 +36,8 @@ class CompleteExample extends StatelessWidget {
               leading: const SizedBox(),
               expandedHeight: 240,
               background: MutableBackground(
-                expandedWidget: Image.network(
-                  'https://loadedlandscapes.com/wp-content/uploads/2019/07/lighting.jpg',
+                expandedWidget: Image.asset(
+                  'assets/images/mountains.jpg',
                   fit: BoxFit.cover,
                 ),
                 collapsedColor: primaryColor,
