@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sliver_flutter/sliver_flutter.dart';
-import 'package:sliver_flutter/src/extension/header_item_extensions.dart';
+import 'package:sliver_header_delegate/sliver_header_delegate.dart';
+import 'package:sliver_header_delegate/src/extension/header_item_extensions.dart';
 
 class HeaderItemWidget extends StatelessWidget {
   const HeaderItemWidget(
@@ -33,9 +33,9 @@ class HeaderItemWidget extends StatelessWidget {
   }
 
   Widget _wrapWithScale() {
-    return _item.options.contains(HeaderItemOptions.hide)
+    return _item.options.contains(HeaderItemOptions.scale)
         ? Transform.scale(
-            scale: Tween<double>(begin: 1, end: 0.5).transform(_progress),
+            scale: Tween<double>(begin: 1, end: 0).transform(_progress),
             child: _item.child,
           )
         : _item.child;

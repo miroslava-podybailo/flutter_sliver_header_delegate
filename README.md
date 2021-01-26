@@ -1,10 +1,51 @@
+# sliver_header_delegate
+This package provides a flexible sliver header delegate that allows easily customize your SliverHeader
+
+## Getting Started
+
+In the `pubspec.yaml` of your flutter project, add the following dependency:
+
+```yaml
+dependencies:
+    ...
+    sliver_header_delegate: ^0.0.1
+```
+
+Import in your project:
+
+```dart
+import 'package:sliver_header_delegate/sliver_header_delegate.dart';
+```
+
+Inside your `CustomScrollView` declare `SliverPersistentHeader` and set `FlexibleHeaderDelegate` as it's delegate
+
+```dart
+CustomScrollView(
+      slivers: [
+        SliverPersistentHeader(
+          delegate: FlexibleHeaderDelegate(),
+        ),
+      ],
+    );
+```
+
+If you want your widget to fill the status bar, specify `statusBarHeight` parameter:
+
+```dart
+delegate: FlexibleHeaderDelegate(
+            statusBarHeight: MediaQuery.of(context).padding.top,
+          ),
+```
+
+
+# Examples
 
 ## Mutable background
 
 ![](mutable_background.gif)
 
 
-```
+```dart
  SliverPersistentHeader(
             pinned: true,
             delegate: FlexibleHeaderDelegate(
@@ -23,7 +64,7 @@
 ![](gradient_background.gif)
 
 
-```
+```dart
   SliverPersistentHeader(
             pinned: true,
             delegate: FlexibleHeaderDelegate(
@@ -47,7 +88,7 @@
 ![](modified_title.gif)
 
 
-```
+```dart
     SliverPersistentHeader(
               pinned: true,
               delegate: FlexibleHeaderDelegate(
@@ -72,7 +113,7 @@
 ![](customized_items.gif)
 
 
-```
+```dart
      SliverPersistentHeader(
                 pinned: true,
                 delegate: FlexibleHeaderDelegate(

@@ -1,5 +1,5 @@
-name: sliver_flutter
-description: A new Flutter package.
+name: sliver_header_delegate
+description: A flexible sliver header delegate that allows easily customize your SliverHeader
 version: 0.0.1
 author: Miroslava Podybailo
 homepage: https://github.com/miroslava-podybailo/flutter_sliver_header_delegate

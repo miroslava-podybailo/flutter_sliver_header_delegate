@@ -1,6 +1,6 @@
 import 'package:example/widget/list_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:sliver_flutter/sliver_flutter.dart';
+import 'package:sliver_header_delegate/sliver_header_delegate.dart';
 
 const _startColor = Color(0xFF233329);
 const _endColor = Color(0xFF63D471);
