@@ -7,10 +7,12 @@ import 'package:example/screen/mutable_background_example.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,30 +21,30 @@ class MyApp extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const _Button(
+          children: const [
+            _Button(
               text: 'Complete Example',
               route: CompleteExample(),
             ),
-            const _Button(
+            _Button(
               text: 'Mutable background',
               route: MutableBackgroundExample(),
             ),
-            const _Button(
+            _Button(
               text: 'Image & Text background',
               route: ImageTextBackgroundExample(),
             ),
-            const _Button(
+            _Button(
               text: 'Gradient background',
               route: GradientBackgroundExample(),
             ),
-            const _Button(
+            _Button(
               text: 'Modified title',
-              route: const ModifiedTitleExample(),
+              route: ModifiedTitleExample(),
             ),
-            const _Button(
+            _Button(
               text: 'Customized items',
-              route: const CustomizedChildrenExample(),
+              route: CustomizedChildrenExample(),
             ),
           ],
         ),
@@ -64,7 +66,7 @@ class _Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () => Navigator.of(context).push(
+      onPressed: () => Navigator.of(context).push<void>(
         MaterialPageRoute(builder: (_) => route),
       ),
       child: Text(text),

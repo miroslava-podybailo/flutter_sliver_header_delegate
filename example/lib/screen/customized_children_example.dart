@@ -12,28 +12,29 @@ class CustomizedChildrenExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverPersistentHeader(
             pinned: true,
             delegate: FlexibleHeaderDelegate(
-                statusBarHeight: MediaQuery.of(context).padding.top,
-                leading: const SizedBox(),
-                backgroundColor: _headerColor,
-                children: [
-                  FlexibleHeaderItem(
-                    child: _DartLogo(),
-                    options: [HeaderItemOptions.hide],
-                    alignment: Alignment.centerRight,
-                    expandedPadding: _expandedPadding,
-                  ),
-                  FlexibleHeaderItem(
-                    child: _FlutterLogo(),
-                    options: [HeaderItemOptions.scale],
-                    alignment: Alignment.centerLeft,
-                    expandedPadding: _expandedPadding,
-                  ),
-                ]),
+              statusBarHeight: MediaQuery.of(context).padding.top,
+              leading: const SizedBox(),
+              backgroundColor: _headerColor,
+              children: [
+                FlexibleHeaderItem(
+                  options: const [HeaderItemOptions.hide],
+                  alignment: Alignment.centerRight,
+                  expandedPadding: _expandedPadding,
+                  child: _DartLogo(),
+                ),
+                FlexibleHeaderItem(
+                  options: const [HeaderItemOptions.scale],
+                  alignment: Alignment.centerLeft,
+                  expandedPadding: _expandedPadding,
+                  child: _FlutterLogo(),
+                ),
+              ],
+            ),
           ),
           const ListWidget(color: _headerColor),
         ],

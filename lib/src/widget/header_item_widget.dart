@@ -15,7 +15,7 @@ class HeaderItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 100),
+      duration: const Duration(milliseconds: 100),
       padding: _item.paddingValue(_progress),
       margin: _item.marginValue(_progress),
       alignment: _item.alignmentValue(_progress),

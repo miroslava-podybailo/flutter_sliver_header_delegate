@@ -13,7 +13,7 @@ class MutableBackgroundExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverPersistentHeader(
             pinned: true,

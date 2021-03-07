@@ -8,13 +8,13 @@ import 'package:sliver_header_delegate/src/widget/mutable_background_widget.dart
 extension XWidget on Widget {
   Widget transform(double progress) {
     if (this is FlexibleTextItem) {
-      return FlexibleTextItemWidget(this, progress);
+      return FlexibleTextItemWidget(this as FlexibleTextItem, progress);
     } else if (this is FlexibleHeaderItem) {
-      return HeaderItemWidget(this, progress);
+      return HeaderItemWidget(this as FlexibleHeaderItem, progress);
     } else if (this is MutableBackground) {
-      return MutableBackgroundWidget(progress, this);
+      return MutableBackgroundWidget(progress, this as MutableBackground);
     } else if (this is GradientBackground) {
-      return GradientBackgroundWidget(progress, this);
+      return GradientBackgroundWidget(progress, this as GradientBackground);
     }
 
     return this;

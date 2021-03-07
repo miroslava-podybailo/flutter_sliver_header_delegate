@@ -29,7 +29,7 @@ class ModifiedTitleExample extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverPersistentHeader(
             pinned: true,
@@ -38,7 +38,7 @@ class ModifiedTitleExample extends StatelessWidget {
               backgroundColor: Colors.white,
               expandedHeight: 120,
               children: [
-                FlexibleTextItem(
+                const FlexibleTextItem(
                   text: 'Modified title',
                   expandedStyle: _expandedTextStyle,
                   collapsedStyle: _collapsedTextStyle,

@@ -5,7 +5,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:sliver_header_delegate/src/extension/widget_extension.dart';
 import 'package:sliver_header_delegate/src/item/header_background.dart';
-import 'package:sliver_header_delegate/src/widget/leading_button.dart';
 
 // TODO FlexibleBuilder
 typedef FlexibleBuilder = Widget Function(
@@ -19,6 +18,8 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
     this.collapsedHeight = kToolbarHeight,
     this.expandedHeight = kToolbarHeight * 3,
     this.children,
+    this.actions,
+    this.title,
     this.backgroundColor,
     this.background,
     this.collapsedElevation = 8,
@@ -28,6 +29,10 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
     this.statusBarHeight = 0,
   });
 
+  final List<Widget> actions;
+  final Widget leading;
+  final Widget title;
+
   final double expandedHeight;
   final double collapsedHeight;
   final List<Widget> children;
@@ -35,7 +40,6 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
   final Widget background;
   final double expandedElevation;
   final double collapsedElevation;
-  final Widget leading;
   final FlexibleBuilder builder;
 
   final double statusBarHeight;
@@ -47,9 +51,9 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     final offset = min(shrinkOffset, maxExtent - minExtent);
-    final double progress = offset / (maxExtent - minExtent);
+    final progress = offset / (maxExtent - minExtent);
 
-    final double visibleMainHeight = max(maxExtent - shrinkOffset, minExtent);
+    final visibleMainHeight = max(maxExtent - shrinkOffset, minExtent);
 
     return Material(
       elevation: progress < 1 ? expandedElevation : collapsedElevation,
@@ -57,6 +61,13 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
         fit: StackFit.expand,
         children: [
           if (background != null) background.transform(progress),
+          AppBar(
+            backgroundColor: Colors.transparent,
+            actions: actions,
+            leading: leading,
+            title: title,
+            elevation: 0,
+          ),
           Container(
             height: visibleMainHeight,
             padding: EdgeInsets.only(top: statusBarHeight),
@@ -67,7 +78,6 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
                 if (builder != null) builder(context, progress),
                 if (children != null)
                   ...children.map((item) => item.transform(progress)).toList(),
-                LeadingButton(leading: leading),
               ],
             ),
           ),
@@ -89,14 +99,16 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
 
 // TODO MutableBackground
 class MutableBackground extends HeaderBackground {
-  MutableBackground({
+  const MutableBackground({
     this.expandedWidget,
     this.expandedColor,
     this.collapsedWidget,
     this.collapsedColor,
     this.animationDuration = const Duration(milliseconds: 150),
+    Key key,
   })  : assert(expandedColor == null || expandedWidget == null),
-        assert(collapsedColor == null || collapsedWidget == null);
+        assert(collapsedColor == null || collapsedWidget == null),
+        super(key: key);
 
   final Widget expandedWidget;
   final Widget collapsedWidget;
@@ -107,7 +119,11 @@ class MutableBackground extends HeaderBackground {
 
 // TODO GradientBackground
 class GradientBackground extends HeaderBackground {
-  GradientBackground({@required this.gradient, this.modifyGradient = true});
+  const GradientBackground({
+    @required this.gradient,
+    this.modifyGradient = true,
+    Key key,
+  }) : super(key: key);
 
   final Gradient gradient;
   final bool modifyGradient;
@@ -121,7 +137,7 @@ enum HeaderItemOptions {
 
 //TODO FlexibleHeaderItem
 class FlexibleHeaderItem extends Widget {
-  FlexibleHeaderItem({
+  const FlexibleHeaderItem({
     this.child,
     this.alignment,
     this.expandedAlignment,
@@ -133,12 +149,14 @@ class FlexibleHeaderItem extends Widget {
     this.expandedMargin,
     this.collapsedMargin,
     this.options = const [],
+    Key key,
   })  : assert(alignment == null ||
             (expandedAlignment == null && collapsedAlignment == null)),
         assert(padding == null ||
             (expandedPadding == null && collapsedPadding == null)),
         assert(margin == null ||
-            (expandedMargin == null && collapsedMargin == null));
+            (expandedMargin == null && collapsedMargin == null)),
+        super(key: key);
 
   final Alignment alignment;
   final Alignment expandedAlignment;
@@ -163,7 +181,7 @@ class FlexibleHeaderItem extends Widget {
 
 // TODO FlexibleTextItem
 class FlexibleTextItem extends FlexibleHeaderItem {
-  FlexibleTextItem({
+  const FlexibleTextItem({
     @required this.text,
     this.collapsedStyle,
     this.expandedStyle,
@@ -177,8 +195,9 @@ class FlexibleTextItem extends FlexibleHeaderItem {
     EdgeInsets expandedMargin,
     EdgeInsets collapsedMargin,
     List<HeaderItemOptions> options = const [],
+    Key key,
   }) : super(
-          alignment: alignment,
+    alignment: alignment,
           expandedAlignment: expandedAlignment,
           collapsedAlignment: collapsedAlignment,
           padding: padding,
@@ -188,6 +207,7 @@ class FlexibleTextItem extends FlexibleHeaderItem {
           expandedMargin: expandedMargin,
           collapsedMargin: collapsedMargin,
           options: options,
+          key: key,
         );
 
   final String text;

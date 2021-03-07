@@ -12,14 +12,14 @@ class GradientBackgroundExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverPersistentHeader(
             pinned: true,
             delegate: FlexibleHeaderDelegate(
               statusBarHeight: MediaQuery.of(context).padding.top,
               leading: const SizedBox(),
-              background: GradientBackground(
+              background: const GradientBackground(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

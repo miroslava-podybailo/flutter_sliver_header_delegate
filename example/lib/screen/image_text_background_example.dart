@@ -31,17 +31,17 @@ class ImageTextBackgroundExample extends StatelessWidget {
               ),
               children: [
                 Container(
+                  alignment: Alignment.bottomLeft,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
                   child: Text(
                     'Mountains',
                     style: theme.textTheme.headline4.copyWith(
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
-                  ),
-                  alignment: Alignment.bottomLeft,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
                   ),
                 ),
               ],

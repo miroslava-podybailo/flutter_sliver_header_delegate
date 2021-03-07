@@ -1,0 +1,19 @@
+include: package:extra_pedantic/analysis_options_flutter.yaml
+
+linter:
+  rules:
+    - always_put_control_body_on_new_line
+    - always_put_required_named_parameters_first
+    - avoid_equals_and_hash_code_on_mutable_classes
+    - avoid_field_initializers_in_const_classes
+    - avoid_redundant_argument_values
+    - avoid_renaming_method_parameters
+    - avoid_types_on_closure_parameters
+    - avoid_unnecessary_containers
+    - camel_case_types
+    - omit_local_variable_types
+    - prefer_const_literals_to_create_immutables
+    - prefer_constructors_over_static_methods
+    - sort_constructors_first
+    - unnecessary_new
+    - use_key_in_widget_constructors
