@@ -5,3 +5,8 @@
 ## 0.0.1+1
 
 * Example changes
+
+## 0.0.2
+
+* Change licence to MIT
+* Add ability to provide actions

@@ -45,70 +45,40 @@ delegate: FlexibleHeaderDelegate(
 ![](completed.gif)
 
 ```dart
-@override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final expandedStyle =
-        theme.textTheme.headline4.copyWith(color: Colors.white);
-    final collapsedStyle =
-        theme.textTheme.headline6.copyWith(color: Colors.white);
-    final padding = const EdgeInsets.symmetric(horizontal: 16, vertical: 16);
-
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: () {},
-          ),
-        ],
+SliverPersistentHeader(
+  pinned: true,
+  delegate: FlexibleHeaderDelegate(
+    statusBarHeight: MediaQuery.of(context).padding.top,
+    expandedHeight: 240,
+    background: MutableBackground(
+      expandedWidget: Image.asset(
+        'assets/images/mountains.jpg',
+        fit: BoxFit.cover,
       ),
-      body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: <Widget>[
-          SliverPersistentHeader(
-            pinned: true,
-            delegate: FlexibleHeaderDelegate(
-              statusBarHeight: MediaQuery.of(context).padding.top,
-              leading: const SizedBox(),
-              expandedHeight: 240,
-              background: MutableBackground(
-                expandedWidget: Image.asset(
-                  'assets/images/mountains.jpg',
-                  fit: BoxFit.cover,
-                ),
-                collapsedColor: primaryColor,
-              ),
-              children: [
-                FlexibleTextItem(
-                  text: 'Mountains',
-                  collapsedStyle: collapsedStyle,
-                  expandedStyle: expandedStyle,
-                  expandedAlignment: Alignment.bottomLeft,
-                  collapsedAlignment: Alignment.center,
-                  expandedPadding: padding,
-                ),
-              ],
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                // List items here
-              ],
-            ),
-          ),
-        ],
+      collapsedColor: primaryColor,
+    ),
+    actions: [
+      IconButton(
+        icon: const Icon(Icons.search),
+        onPressed: () {},
       ),
-    );
-  }
+      IconButton(
+        icon: const Icon(Icons.more_vert),
+        onPressed: () {},
+      ),
+    ],
+    children: [
+      FlexibleTextItem(
+        text: 'Mountains',
+        collapsedStyle: collapsedStyle,
+        expandedStyle: expandedStyle,
+        expandedAlignment: Alignment.bottomLeft,
+        collapsedAlignment: Alignment.center,
+        expandedPadding: padding,
+      ),
+    ],
+  ),
+)
 ```
 
 ## Mutable background

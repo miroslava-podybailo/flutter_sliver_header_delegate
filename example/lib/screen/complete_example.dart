@@ -53,102 +53,110 @@ class CompleteExample extends StatelessWidget {
               ],
             ),
           ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                ListTile(
-                  title: const Text('(650) 555-1234'),
-                  subtitle: const Text('Mobile'),
-                  leading: const Icon(Icons.phone),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.message),
-                    onPressed: () {},
-                  ),
-                ),
-                ListTile(
-                  title: const Text('(323) 555-6789'),
-                  subtitle: const Text('Work'),
-                  leading: const SizedBox(),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.message),
-                    onPressed: () {},
-                  ),
-                ),
-                ListTile(
-                  title: const Text('(650) 555-6789'),
-                  subtitle: const Text('Home'),
-                  leading: const SizedBox(),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.message),
-                    onPressed: () {},
-                  ),
-                ),
-                const Divider(),
-                ListTile(
-                  title: const Text('ali_connors@example.com'),
-                  subtitle: const Text('Personal'),
-                  leading: const Icon(Icons.contact_mail),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.mail),
-                    onPressed: () {},
-                  ),
-                ),
-                ListTile(
-                  title: const Text('aliconnors@example.com'),
-                  subtitle: const Text('Work'),
-                  leading: const SizedBox(),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.mail),
-                    onPressed: () {},
-                  ),
-                ),
-                const Divider(),
-                ListTile(
-                  title: const Text('2000 Main Street\nSan Francisco, CA'),
-                  subtitle: const Text('Home'),
-                  leading: const Icon(Icons.location_on),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.map),
-                    onPressed: () {},
-                  ),
-                ),
-                ListTile(
-                  title: const Text(
-                      '1600 Amphitheater Parkway\nMountain View, CA'),
-                  subtitle: const Text('Work'),
-                  leading: const SizedBox(),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.map),
-                    onPressed: () {},
-                  ),
-                ),
-                ListTile(
-                  title: const Text('126 Severyns Ave\nMountain View, CA'),
-                  subtitle: const Text('Jet Travel'),
-                  leading: const SizedBox(),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.map),
-                    onPressed: () {},
-                  ),
-                ),
-                const Divider(),
-                const ListTile(
-                  title: Text('Birthday'),
-                  subtitle: Text('January 9th, 1980'),
-                  leading: Icon(Icons.calendar_today),
-                ),
-                const ListTile(
-                  title: Text('Wedding anniversary'),
-                  subtitle: Text('June 24th, 2015'),
-                  leading: SizedBox(),
-                ),
-                const ListTile(
-                  title: Text('First day in office'),
-                  subtitle: Text('January 20th, 2015'),
-                  leading: SizedBox(),
-                ),
-              ],
+          const _SliverList(),
+        ],
+      ),
+    );
+  }
+}
+
+class _SliverList extends StatelessWidget {
+  const _SliverList({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverList(
+      delegate: SliverChildListDelegate(
+        [
+          ListTile(
+            title: const Text('(650) 555-1234'),
+            subtitle: const Text('Mobile'),
+            leading: const Icon(Icons.phone),
+            trailing: IconButton(
+              icon: const Icon(Icons.message),
+              onPressed: () {},
             ),
+          ),
+          ListTile(
+            title: const Text('(323) 555-6789'),
+            subtitle: const Text('Work'),
+            leading: const SizedBox(),
+            trailing: IconButton(
+              icon: const Icon(Icons.message),
+              onPressed: () {},
+            ),
+          ),
+          ListTile(
+            title: const Text('(650) 555-6789'),
+            subtitle: const Text('Home'),
+            leading: const SizedBox(),
+            trailing: IconButton(
+              icon: const Icon(Icons.message),
+              onPressed: () {},
+            ),
+          ),
+          const Divider(),
+          ListTile(
+            title: const Text('ali_connors@example.com'),
+            subtitle: const Text('Personal'),
+            leading: const Icon(Icons.contact_mail),
+            trailing: IconButton(
+              icon: const Icon(Icons.mail),
+              onPressed: () {},
+            ),
+          ),
+          ListTile(
+            title: const Text('aliconnors@example.com'),
+            subtitle: const Text('Work'),
+            leading: const SizedBox(),
+            trailing: IconButton(
+              icon: const Icon(Icons.mail),
+              onPressed: () {},
+            ),
+          ),
+          const Divider(),
+          ListTile(
+            title: const Text('2000 Main Street\nSan Francisco, CA'),
+            subtitle: const Text('Home'),
+            leading: const Icon(Icons.location_on),
+            trailing: IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () {},
+            ),
+          ),
+          ListTile(
+            title: const Text('1600 Amphitheater Parkway\nMountain View, CA'),
+            subtitle: const Text('Work'),
+            leading: const SizedBox(),
+            trailing: IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () {},
+            ),
+          ),
+          ListTile(
+            title: const Text('126 Severyns Ave\nMountain View, CA'),
+            subtitle: const Text('Jet Travel'),
+            leading: const SizedBox(),
+            trailing: IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () {},
+            ),
+          ),
+          const Divider(),
+          const ListTile(
+            title: Text('Birthday'),
+            subtitle: Text('January 9th, 1980'),
+            leading: Icon(Icons.calendar_today),
+          ),
+          const ListTile(
+            title: Text('Wedding anniversary'),
+            subtitle: Text('June 24th, 2015'),
+            leading: SizedBox(),
+          ),
+          const ListTile(
+            title: Text('First day in office'),
+            subtitle: Text('January 20th, 2015'),
+            leading: SizedBox(),
           ),
         ],
       ),
