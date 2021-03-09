@@ -29,18 +29,18 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
     this.statusBarHeight = 0,
   });
 
-  final List<Widget> actions;
-  final Widget leading;
-  final Widget title;
+  final List<Widget>? actions;
+  final Widget? leading;
+  final Widget? title;
 
   final double expandedHeight;
   final double collapsedHeight;
-  final List<Widget> children;
-  final Color backgroundColor;
-  final Widget background;
+  final List<Widget>? children;
+  final Color? backgroundColor;
+  final Widget? background;
   final double expandedElevation;
   final double collapsedElevation;
-  final FlexibleBuilder builder;
+  final FlexibleBuilder? builder;
 
   final double statusBarHeight;
 
@@ -60,7 +60,7 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          if (background != null) background.transform(progress),
+          if (background != null) background.transform(progress)!,
           AppBar(
             backgroundColor: Colors.transparent,
             actions: actions,
@@ -75,9 +75,10 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                if (builder != null) builder(context, progress),
+                if (builder != null) builder!(context, progress),
                 if (children != null)
-                  ...children.map((item) => item.transform(progress)).toList(),
+                  ...children!.map((item) => item.transform(progress)).toList()
+                      as Iterable<Widget>,
               ],
             ),
           ),
@@ -105,24 +106,24 @@ class MutableBackground extends HeaderBackground {
     this.collapsedWidget,
     this.collapsedColor,
     this.animationDuration = const Duration(milliseconds: 150),
-    Key key,
+    Key? key,
   })  : assert(expandedColor == null || expandedWidget == null),
         assert(collapsedColor == null || collapsedWidget == null),
         super(key: key);
 
-  final Widget expandedWidget;
-  final Widget collapsedWidget;
-  final Color expandedColor;
-  final Color collapsedColor;
+  final Widget? expandedWidget;
+  final Widget? collapsedWidget;
+  final Color? expandedColor;
+  final Color? collapsedColor;
   final Duration animationDuration;
 }
 
 // TODO GradientBackground
 class GradientBackground extends HeaderBackground {
   const GradientBackground({
-    @required this.gradient,
+    required this.gradient,
     this.modifyGradient = true,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   final Gradient gradient;
@@ -149,7 +150,7 @@ class FlexibleHeaderItem extends Widget {
     this.expandedMargin,
     this.collapsedMargin,
     this.options = const [],
-    Key key,
+    Key? key,
   })  : assert(alignment == null ||
             (expandedAlignment == null && collapsedAlignment == null)),
         assert(padding == null ||
@@ -158,21 +159,21 @@ class FlexibleHeaderItem extends Widget {
             (expandedMargin == null && collapsedMargin == null)),
         super(key: key);
 
-  final Alignment alignment;
-  final Alignment expandedAlignment;
-  final Alignment collapsedAlignment;
+  final Alignment? alignment;
+  final Alignment? expandedAlignment;
+  final Alignment? collapsedAlignment;
 
-  final EdgeInsets padding;
-  final EdgeInsets expandedPadding;
-  final EdgeInsets collapsedPadding;
+  final EdgeInsets? padding;
+  final EdgeInsets? expandedPadding;
+  final EdgeInsets? collapsedPadding;
 
-  final EdgeInsets margin;
-  final EdgeInsets expandedMargin;
-  final EdgeInsets collapsedMargin;
+  final EdgeInsets? margin;
+  final EdgeInsets? expandedMargin;
+  final EdgeInsets? collapsedMargin;
 
   final List<HeaderItemOptions> options;
 
-  final Widget child;
+  final Widget? child;
 
   @override
   Element createElement() =>
@@ -182,20 +183,20 @@ class FlexibleHeaderItem extends Widget {
 // TODO FlexibleTextItem
 class FlexibleTextItem extends FlexibleHeaderItem {
   const FlexibleTextItem({
-    @required this.text,
+    required this.text,
     this.collapsedStyle,
     this.expandedStyle,
-    Alignment alignment,
-    Alignment expandedAlignment,
-    Alignment collapsedAlignment,
-    EdgeInsets padding,
-    EdgeInsets expandedPadding,
-    EdgeInsets collapsedPadding,
-    EdgeInsets margin,
-    EdgeInsets expandedMargin,
-    EdgeInsets collapsedMargin,
+    Alignment? alignment,
+    Alignment? expandedAlignment,
+    Alignment? collapsedAlignment,
+    EdgeInsets? padding,
+    EdgeInsets? expandedPadding,
+    EdgeInsets? collapsedPadding,
+    EdgeInsets? margin,
+    EdgeInsets? expandedMargin,
+    EdgeInsets? collapsedMargin,
     List<HeaderItemOptions> options = const [],
-    Key key,
+    Key? key,
   }) : super(
     alignment: alignment,
           expandedAlignment: expandedAlignment,
@@ -212,6 +213,6 @@ class FlexibleTextItem extends FlexibleHeaderItem {
 
   final String text;
 
-  final TextStyle collapsedStyle;
-  final TextStyle expandedStyle;
+  final TextStyle? collapsedStyle;
+  final TextStyle? expandedStyle;
 }

@@ -5,19 +5,19 @@ class GradientBackgroundWidget extends StatelessWidget {
   const GradientBackgroundWidget(
     this._progress,
     this._gradientBackground, {
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   final double _progress;
-  final GradientBackground _gradientBackground;
+  final GradientBackground? _gradientBackground;
 
   @override
   Widget build(BuildContext context) {
-    return _gradientBackground.modifyGradient
+    return _gradientBackground!.modifyGradient
         ? ShaderMask(
             blendMode: BlendMode.src,
             shaderCallback: (bounds) {
-              return _gradientBackground.gradient.createShader(
+              return _gradientBackground!.gradient.createShader(
                 Rect.fromLTWH(
                   0,
                   0,
@@ -38,7 +38,7 @@ class GradientBackgroundWidget extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-              gradient: _gradientBackground.gradient,
+              gradient: _gradientBackground!.gradient,
             ),
           );
   }

@@ -10,3 +10,7 @@
 
 * Change licence to MIT
 * Add ability to provide actions
+
+## 0.0.3
+
+* Null Safety migration

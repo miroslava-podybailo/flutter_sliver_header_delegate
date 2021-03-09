@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class HeaderBackground extends Widget {
-  const HeaderBackground({Key key}) : super(key: key);
+  const HeaderBackground({Key? key}) : super(key: key);
 
   @override
   Element createElement() =>
