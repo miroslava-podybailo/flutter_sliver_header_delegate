@@ -198,7 +198,7 @@ class FlexibleTextItem extends FlexibleHeaderItem {
     List<HeaderItemOptions> options = const [],
     Key? key,
   }) : super(
-    alignment: alignment,
+          alignment: alignment,
           expandedAlignment: expandedAlignment,
           collapsedAlignment: collapsedAlignment,
           padding: padding,
