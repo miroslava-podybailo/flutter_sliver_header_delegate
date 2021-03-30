@@ -186,6 +186,13 @@ class FlexibleTextItem extends FlexibleHeaderItem {
     required this.text,
     this.collapsedStyle,
     this.expandedStyle,
+    this.maxLines,
+    this.textScaleFactor,
+    this.overflow,
+    this.softWrap,
+    this.locale,
+    this.textDirection,
+    this.textAlign,
     Alignment? alignment,
     Alignment? expandedAlignment,
     Alignment? collapsedAlignment,
@@ -215,4 +222,12 @@ class FlexibleTextItem extends FlexibleHeaderItem {
 
   final TextStyle? collapsedStyle;
   final TextStyle? expandedStyle;
+
+  final int? maxLines;
+  final double? textScaleFactor;
+  final TextOverflow? overflow;
+  final bool? softWrap;
+  final Locale? locale;
+  final TextDirection? textDirection;
+  final TextAlign? textAlign;
 }

@@ -26,6 +26,13 @@ class FlexibleTextItemWidget extends StatelessWidget {
           _item!.collapsedStyle,
           _progress,
         ),
+        maxLines: _item!.maxLines,
+        textScaleFactor: _item!.textScaleFactor,
+        overflow: _item!.overflow,
+        softWrap: _item!.softWrap,
+        locale: _item!.locale,
+        textDirection: _item!.textDirection,
+        textAlign: _item!.textAlign,
       ),
     );
   }

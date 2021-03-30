@@ -14,3 +14,7 @@
 ## 0.0.3
 
 * Null Safety migration
+
+## 0.0.4
+
+* Provide more FlexibleTextItem properties
