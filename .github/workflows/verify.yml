@@ -1,0 +1,25 @@
+name: Verify
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setting up Flutter SDK
+        uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+
+      - name: Run pub get
+        run: flutter pub get
+
+      - name: Check formatting
+        run: dartfmt --dry-run --set-exit-if-changed lib
+
+      - name: Run analyzer
+        run: flutter analyze
+
+      - name: Check dependencies
+        run: .github/script/check_deps.sh

@@ -17,10 +17,10 @@ dependencies:
 
 
 dev_dependencies:
+  extra_pedantic: ^1.2.0
+
   flutter_test:
     sdk: flutter
-
-  extra_pedantic: ^1.2.0
 
 flutter:
   uses-material-design: true
