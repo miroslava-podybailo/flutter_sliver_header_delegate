@@ -18,3 +18,7 @@
 ## 0.0.4
 
 * Provide more FlexibleTextItem properties
+
+## 0.0.5
+
+* Bug fixes 
