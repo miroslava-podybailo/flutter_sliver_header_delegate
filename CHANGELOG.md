@@ -22,3 +22,7 @@
 ## 0.0.5
 
 * Bug fixes 
+
+## 0.0.6
+
+* Cannot tap bug fixes 
