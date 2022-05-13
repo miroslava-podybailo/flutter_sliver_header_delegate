@@ -155,6 +155,7 @@ class FlexibleHeaderItem extends Widget {
     this.expandedMargin,
     this.collapsedMargin,
     this.options = const [],
+    this.minScale = 0,
     Key? key,
   })  : assert(alignment == null ||
             (expandedAlignment == null && collapsedAlignment == null)),
@@ -162,6 +163,7 @@ class FlexibleHeaderItem extends Widget {
             (expandedPadding == null && collapsedPadding == null)),
         assert(margin == null ||
             (expandedMargin == null && collapsedMargin == null)),
+        assert(minScale >= 0 && minScale <= 1),
         super(key: key);
 
   final Alignment? alignment;
@@ -177,6 +179,7 @@ class FlexibleHeaderItem extends Widget {
   final EdgeInsets? collapsedMargin;
 
   final List<HeaderItemOptions> options;
+  final double minScale;
 
   final Widget? child;
 
