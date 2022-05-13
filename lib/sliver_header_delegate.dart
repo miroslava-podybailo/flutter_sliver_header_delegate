@@ -60,7 +60,8 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          if (background != null) background!.transform(progress),
+          if (background != null)
+            SizedBox.expand(child: background!.transform(progress)),
           Container(
             height: visibleMainHeight,
             padding: EdgeInsets.only(top: statusBarHeight),
@@ -74,12 +75,17 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
               ],
             ),
           ),
-          AppBar(
-            backgroundColor: Colors.transparent,
-            actions: actions,
-            leading: leading,
-            title: title,
-            elevation: 0,
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              actions: actions,
+              leading: leading,
+              title: title,
+              elevation: 0,
+            ),
           ),
         ],
       ),
@@ -149,6 +155,7 @@ class FlexibleHeaderItem extends Widget {
     this.expandedMargin,
     this.collapsedMargin,
     this.options = const [],
+    this.minScale = 0,
     Key? key,
   })  : assert(alignment == null ||
             (expandedAlignment == null && collapsedAlignment == null)),
@@ -156,6 +163,7 @@ class FlexibleHeaderItem extends Widget {
             (expandedPadding == null && collapsedPadding == null)),
         assert(margin == null ||
             (expandedMargin == null && collapsedMargin == null)),
+        assert(minScale >= 0 && minScale <= 1),
         super(key: key);
 
   final Alignment? alignment;
@@ -171,6 +179,7 @@ class FlexibleHeaderItem extends Widget {
   final EdgeInsets? collapsedMargin;
 
   final List<HeaderItemOptions> options;
+  final double minScale;
 
   final Widget? child;
 
