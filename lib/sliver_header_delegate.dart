@@ -60,7 +60,6 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          if (background != null) background!.transform(progress),
           Container(
             height: visibleMainHeight,
             padding: EdgeInsets.only(top: statusBarHeight),
@@ -81,6 +80,7 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
             title: title,
             elevation: 0,
           ),
+          if (background != null) background!.transform(progress),
         ],
       ),
     );
