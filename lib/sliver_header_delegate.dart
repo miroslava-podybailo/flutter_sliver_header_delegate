@@ -5,6 +5,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:sliver_header_delegate/src/extension/widget_extension.dart';
 import 'package:sliver_header_delegate/src/item/header_background.dart';
+import 'package:transparent_pointer/transparent_pointer.dart';
 
 // TODO FlexibleBuilder
 typedef FlexibleBuilder = Widget Function(
@@ -74,12 +75,14 @@ class FlexibleHeaderDelegate extends SliverPersistentHeaderDelegate {
               ],
             ),
           ),
-          AppBar(
-            backgroundColor: Colors.transparent,
-            actions: actions,
-            leading: leading,
-            title: title,
-            elevation: 0,
+          TransparentPointer(
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              actions: actions,
+              leading: leading,
+              title: title,
+              elevation: 0,
+            ),
           ),
         ],
       ),
