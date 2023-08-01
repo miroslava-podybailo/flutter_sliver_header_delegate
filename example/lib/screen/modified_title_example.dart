@@ -1,6 +1,7 @@
-import 'package:example/widget/list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:sliver_header_delegate/sliver_header_delegate.dart';
+
+import '../widget/list_widget.dart';
 
 const _titleColor = Color(0xFFC62828);
 
@@ -22,7 +23,7 @@ const _expandedPadding = EdgeInsets.symmetric(
 );
 
 class ModifiedTitleExample extends StatelessWidget {
-  const ModifiedTitleExample({Key key}) : super(key: key);
+  const ModifiedTitleExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

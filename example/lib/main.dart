@@ -1,17 +1,18 @@
-import 'package:example/screen/complete_example.dart';
-import 'package:example/screen/customized_children_example.dart';
-import 'package:example/screen/gradient_background_example.dart';
-import 'package:example/screen/image_text_background_example.dart';
-import 'package:example/screen/modified_title_example.dart';
-import 'package:example/screen/mutable_background_example.dart';
 import 'package:flutter/material.dart';
+
+import 'screen/complete_example.dart';
+import 'screen/customized_children_example.dart';
+import 'screen/gradient_background_example.dart';
+import 'screen/image_text_background_example.dart';
+import 'screen/modified_title_example.dart';
+import 'screen/mutable_background_example.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +56,9 @@ class MyApp extends StatelessWidget {
 
 class _Button extends StatelessWidget {
   const _Button({
-    @required this.text,
-    @required this.route,
-    Key key,
+    required this.text,
+    required this.route,
+    Key? key,
   }) : super(key: key);
 
   final String text;

@@ -4,15 +4,15 @@ import 'package:sliver_header_delegate/sliver_header_delegate.dart';
 const primaryColor = Color(0xBE7A81FF);
 
 class CompleteExample extends StatelessWidget {
-  const CompleteExample({Key key}) : super(key: key);
+  const CompleteExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final expandedStyle =
-        theme.textTheme.headline4.copyWith(color: Colors.white);
+        theme.textTheme.headlineMedium!.copyWith(color: Colors.white);
     final collapsedStyle =
-        theme.textTheme.headline6.copyWith(color: Colors.white);
+        theme.textTheme.headlineMedium!.copyWith(color: Colors.white);
     const padding = EdgeInsets.symmetric(horizontal: 16, vertical: 16);
 
     return Scaffold(
@@ -61,7 +61,7 @@ class CompleteExample extends StatelessWidget {
 }
 
 class _SliverList extends StatelessWidget {
-  const _SliverList({Key key}) : super(key: key);
+  const _SliverList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
