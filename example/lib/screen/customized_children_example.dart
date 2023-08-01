@@ -1,12 +1,13 @@
-import 'package:example/widget/list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:sliver_header_delegate/sliver_header_delegate.dart';
+
+import '../widget/list_widget.dart';
 
 const _headerColor = Color(0xFFB0BEC5);
 const _expandedPadding = EdgeInsets.symmetric(horizontal: 24, vertical: 20);
 
 class CustomizedChildrenExample extends StatelessWidget {
-  const CustomizedChildrenExample({Key key}) : super(key: key);
+  const CustomizedChildrenExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

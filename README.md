@@ -5,7 +5,6 @@ This package provides a flexible sliver header delegate that allows easily custo
 
 In the `pubspec.yaml` of your flutter project, add the following dependency:
 
-```yaml
 dependencies:
     ...
     sliver_header_delegate: ^0.0.1

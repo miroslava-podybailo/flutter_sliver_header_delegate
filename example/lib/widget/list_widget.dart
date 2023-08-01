@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ListWidget extends StatelessWidget {
   const ListWidget({
     this.color = Colors.black,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   final Color color;
